@@ -29,11 +29,6 @@
             "PhpNotDead\\LaravelTestingTools\\": "src"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Test\\": "test"
-        }
-    },
     "bin": [
         "bin/unit",
         "bin/lint"
