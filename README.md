@@ -86,5 +86,5 @@ workflow.yml
                -o vendors_validator.php
 
         - name: Validate vendors
-          run: php validate_vendors.php --skip=${{ env.VENDORS_VALIDATOR_SKIP }}
+          run: php vendors_validator.php --skip=${{ env.VENDORS_VALIDATOR_SKIP }}
 ```
