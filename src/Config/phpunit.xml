@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.5/phpunit.xsd"
-  bootstrap="../../../../autoload.php"
-  colors="true"
-  cacheDirectory="../../../../../storage/framework/cache"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.5/phpunit.xsd"
+         bootstrap="../../../../autoload.php"
+         colors="true"
+         cacheDirectory="../../../../../storage/framework/cache"
 >
   <coverage/>
   <testsuites>
     <testsuite name="Unit">
-      <directory>../tests/Unit</directory>
-      <directory>../Module/*/Test/Unit</directory>
-      <directory>../Module/*/*/Test/Unit</directory>
+      <directory>../../../../../tests/Unit</directory>
+      <directory>../../../../../Module/*/Test/Unit</directory>
+      <directory>../../../../../Module/*/*/Test/Unit</directory>
     </testsuite>
     <testsuite name="Feature">
-      <directory>../tests/Feature</directory>
-      <directory>../Module/*/Test/Feature</directory>
-      <directory>../Module/*/*/Test/Feature</directory>
+      <directory>../../../../../tests/Feature</directory>
+      <directory>../../../../../Module/*/Test/Feature</directory>
+      <directory>../../../../../Module/*/*/Test/Feature</directory>
     </testsuite>
     <testsuite name="Controller">
-      <directory>../tests/Controller</directory>
-      <directory>../Module/*/Test/Controller</directory>
-      <directory>../Module/*/*/Test/Controller</directory>
+      <directory>../../../../../tests/Controller</directory>
+      <directory>../../../../../Module/*/Test/Controller</directory>
+      <directory>../../../../../Module/*/*/Test/Controller</directory>
     </testsuite>
   </testsuites>
   <php>
@@ -38,7 +38,7 @@
   </php>
   <source>
     <include>
-      <directory suffix=".php">../</directory>
+      <directory suffix=".php">../../../../../</directory>
     </include>
   </source>
 </phpunit>
