@@ -8,15 +8,9 @@
         "email": "vitalij@cto4sale.com",
         "homepage": "https://www.cto4sale.com"
     }],
-    "repositories": [
-        {
-            "url": "https://github.com/vitalij-vladimirov/opay.php-linting-tools.git",
-            "type": "git"
-        }
-    ],
     "require": {
         "php": "^8.5",
-        "opay-dev/php-linting-tools": "dev-Upgrade-to-PHP-8.5",
+        "opay-dev/php-linting-tools": "^1.6",
         "phpunit/phpunit": "12.*",
         "mockery/mockery": "1.*"
     },
