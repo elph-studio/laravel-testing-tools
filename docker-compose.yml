@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/php-not-dead/base-php-local:8.5
+    image: ghcr.io/elph-studio/base-php-local:8.5
     tty: true
     user: "1000"
     restart: "no"

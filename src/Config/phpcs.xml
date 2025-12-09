@@ -11,5 +11,5 @@
     <exclude-pattern>*.js</exclude-pattern>
     <exclude-pattern>*.blade.php</exclude-pattern>
 
-    <rule ref="vendor/php-not-dead/laravel-testing-tools/src/Config/phpcs_rules.xml"/>
+    <rule ref="vendor/elph-studio/laravel-testing-tools/src/Config/phpcs_rules.xml"/>
 </ruleset>

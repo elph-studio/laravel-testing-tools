@@ -1,6 +1,6 @@
 build:
 	make stop > /dev/null 2>&1
-	docker pull ghcr.io/php-not-dead/base-php-local:8.5
+	docker pull ghcr.io/elph-studio/base-php-local:8.5
 	docker-compose build
 	make start
 

@@ -8,7 +8,7 @@ fi
 if [ -f "/app/config/phpunit.xml" ]; then
   CONFIG="config/phpunit.xml"
 else
-  CONFIG="vendor/php-not-dead/laravel-testing-tools/src/Config/phpunit.xml"
+  CONFIG="vendor/elph-studio/laravel-testing-tools/src/Config/phpunit.xml"
 fi
 
 PHP_UNIT_BIN=$(echo $PHP_UNIT_BIN|tr -d '\n')

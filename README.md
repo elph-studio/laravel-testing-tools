@@ -1,6 +1,6 @@
-<img src="https://avatars.githubusercontent.com/u/70107733?s=128" width="100" alt="PHP not Dead">
+<img src="https://avatars.githubusercontent.com/u/70107733?s=128" width="100" alt="Elephant Studio">
 
-PHP not Dead :: Laravel testing tools
+Elephant Studio :: Laravel testing tools
 ============
 
 This package provides preconfigured `PHP Unit` and `Linting Tools` packages for Laravel projects.
@@ -25,7 +25,7 @@ It also includes vendor testing tool that can be run during GitHub workflow to d
       - `Module/*/*/Test/Feature`
       - `Module/*/Test/Unit`
       - `Module/*/*/Test/Unit`
-3. [vendor/php-not-dead/laravel-testing-tools/src/Config/phpunit.xml](src/Config/phpunit.xml) will be used only if there is no local configuration file `config/phpunit.xml`
+3. [vendor/elph-studio/laravel-testing-tools/src/Config/phpunit.xml](src/Config/phpunit.xml) will be used only if there is no local configuration file `config/phpunit.xml`
 
 ### Linting tools configuration contains
 
@@ -40,7 +40,7 @@ It also includes vendor testing tool that can be run during GitHub workflow to d
 ### Installation & running
 
 Install
-> $ composer require --dev php-not-dead/laravel-testing-tools
+> $ composer require --dev elph-studio/laravel-testing-tools
 
 Run PHP Unit tests:
 > $ vendor/bin/unit
@@ -57,7 +57,7 @@ Automatic Lint fixing:
 
 .env
 ```dotenv
-VENDORS_VALIDATOR_URL=https://raw.githubusercontent.com/php-not-dead/laravel-testing-tools/refs/heads/main/src/Helper/vendors_validator.php
+VENDORS_VALIDATOR_URL=https://raw.githubusercontent.com/elph-studio/laravel-testing-tools/refs/heads/main/src/Helper/vendors_validator.php
 VENDORS_VALIDATOR_SKIP=roave/security-advisories
 ```
 

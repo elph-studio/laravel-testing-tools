@@ -24,13 +24,13 @@
     <rule ref="OpaySniffs.Classes.ForbiddenClasses">
         <properties>
             <property name="forbiddenExtends" type="array">
-                <element key="Illuminate\Foundation\Http\FormRequest" value="LaravelTestingTools\LaravelCore\DataTransferObject\Request"/>
-                <element key="Symfony\Component\HttpFoundation\Exception\BadRequestException" value="LaravelTestingTools\LaravelCore\Exception\HttpException\BadRequestException"/>
-                <element key="Illuminate\Database\Eloquent\Model" value="LaravelTestingTools\LaravelCore\Model\Model"/>
-                <element key="Illuminate\Database\Eloquent\Factories\Factory" value="LaravelTestingTools\LaravelCore\Database\Faker"/>
-                <element key="Illuminate\Database\Migrations\Migration" value="LaravelTestingTools\LaravelCore\Database\Migration"/>
-                <element key="Illuminate\Cache\CacheManager" value="LaravelTestingTools\LaravelCore\Cache\CacheManager"/>
-                <element key="Illuminate\Routing\ViewController" value="LaravelTestingTools\LaravelCore\Http\Controller\ViewController"/>
+                <element key="Illuminate\Foundation\Http\FormRequest" value="Elph\LaravelTestingTools\DataTransferObject\Request"/>
+                <element key="Symfony\Component\HttpFoundation\Exception\BadRequestException" value="Elph\LaravelTestingTools\Exception\HttpException\BadRequestException"/>
+                <element key="Illuminate\Database\Eloquent\Model" value="Elph\LaravelTestingTools\Model\Model"/>
+                <element key="Illuminate\Database\Eloquent\Factories\Factory" value="Elph\LaravelTestingTools\Database\Faker"/>
+                <element key="Illuminate\Database\Migrations\Migration" value="Elph\LaravelTestingTools\Database\Migration"/>
+                <element key="Illuminate\Cache\CacheManager" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
+                <element key="Illuminate\Routing\ViewController" value="Elph\LaravelTestingTools\Http\Controller\ViewController"/>
                 <!-- Collections usage by mistake -->
                 <element key="Nwidart\Modules\Collection" value="Illuminate\Support\Collection"/>
                 <element key="Ramsey\Collection\Collection" value="Illuminate\Support\Collection"/>
@@ -40,24 +40,24 @@
                 <element key="mysql_xdevapi\Collection" value="Illuminate\Support\Collection"/>
                 <element key="Cassandra\Type\Collection" value="Illuminate\Support\Collection"/>
                 <!-- One of -->
-                <element key="Illuminate\Http\Resources\Json\JsonResource" value="LaravelTestingTools\LaravelCore\DataTransferObject\Response,
-                    LaravelTestingTools\LaravelCore\DataTransferObject\ClientResponse
+                <element key="Illuminate\Http\Resources\Json\JsonResource" value="Elph\LaravelTestingTools\DataTransferObject\Response,
+                    Elph\LaravelTestingTools\DataTransferObject\ClientResponse
                 "/>
-                <element key="Illuminate\Routing\Controller" value="LaravelTestingTools\LaravelCore\Http\Controller\PrivateController,
-                    LaravelTestingTools\LaravelCore\Http\Controller\ApiController,
-                    LaravelTestingTools\LaravelCore\Http\Controller\ViewController,
+                <element key="Illuminate\Routing\Controller" value="Elph\LaravelTestingTools\Http\Controller\PrivateController,
+                    Elph\LaravelTestingTools\Http\Controller\ApiController,
+                    Elph\LaravelTestingTools\Http\Controller\ViewController,
                 "/>
-                <element key="LaravelTestingTools\LaravelCore\Http\Controller\Controller" value="LaravelTestingTools\LaravelCore\Http\Controller\PrivateController,
-                    LaravelTestingTools\LaravelCore\Http\Controller\ApiController,
-                    LaravelTestingTools\LaravelCore\Http\Controller\ViewController
+                <element key="Elph\LaravelTestingTools\Http\Controller\Controller" value="Elph\LaravelTestingTools\Http\Controller\PrivateController,
+                    Elph\LaravelTestingTools\Http\Controller\ApiController,
+                    Elph\LaravelTestingTools\Http\Controller\ViewController
                 "/>
-                <element key="Illuminate\Foundation\Testing\TestCase" value="PhpNotDead\LaravelTestingTools\FeatureTestCase,
-                    PhpNotDead\LaravelTestingTools\ControllerTestCase,
-                    PhpNotDead\LaravelTestingTools\UnitTestCase
+                <element key="Illuminate\Foundation\Testing\TestCase" value="Elph\LaravelTestingTools\FeatureTestCase,
+                    Elph\LaravelTestingTools\ControllerTestCase,
+                    Elph\LaravelTestingTools\UnitTestCase
                 "/>
-                <element key="Test\TestCase" value="PhpNotDead\LaravelTestingTools\FeatureTestCase,
-                    PhpNotDead\LaravelTestingTools\ControllerTestCase,
-                    PhpNotDead\LaravelTestingTools\UnitTestCase
+                <element key="Test\TestCase" value="Elph\LaravelTestingTools\FeatureTestCase,
+                    Elph\LaravelTestingTools\ControllerTestCase,
+                    Elph\LaravelTestingTools\UnitTestCase
                 "/>
             </property>
         </properties>
@@ -75,9 +75,9 @@
     <rule ref="OpaySniffs.Files.ForbiddenCode">
         <properties>
             <property name="forbiddenCode" type="array">
-                <element key="Illuminate\Support\Facades\Cache" value="LaravelTestingTools\LaravelCore\Cache\CacheManager"/>
-                <element key="Illuminate\Contracts\Cache\Store\TaggedCache" value="LaravelTestingTools\LaravelCore\Cache\CacheManager"/>
-                <element key="cache()" value="LaravelTestingTools\LaravelCore\Cache\CacheManager"/>
+                <element key="Illuminate\Support\Facades\Cache" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
+                <element key="Illuminate\Contracts\Cache\Store\TaggedCache" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
+                <element key="cache()" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
             </property>
         </properties>
         <exclude-pattern>src/Cache/CacheManager.php$</exclude-pattern>

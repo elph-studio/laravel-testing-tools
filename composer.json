@@ -1,5 +1,5 @@
 {
-    "name": "php-not-dead/laravel-testing-tools",
+    "name": "elph-studio/laravel-testing-tools",
     "type": "library",
     "description": "Laravel Testing Tools library",
     "keywords": ["phpunit", "phpcs", "phpcsfixer"],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpNotDead\\LaravelTestingTools\\": "src"
+            "Elph\\LaravelTestingTools\\": "src"
         }
     },
     "bin": [

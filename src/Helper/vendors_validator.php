@@ -9,10 +9,10 @@ declare(strict_types=1);
  * This validator is used to ensure that only production ready vendors are required.
  * If any @dev version is used, exception will be thrown.
  *
- * Running: vendor/php-not-dead/laravel-testing-tools/src/Helper/vendors_validator.php
+ * Running: vendor/elph-studio/laravel-testing-tools/src/Helper/vendors_validator.php
  *
  * If you need to skip some vendors, add --skip={vendors list}
- * Example: vendor/php-not-dead/laravel-testing-tools/src/Helper/vendors_validator.php --skip=test/first,test/second
+ * Example: vendor/elph-studio/laravel-testing-tools/src/Helper/vendors_validator.php --skip=test/first,test/second
  */
 return new class () {
     private const string COMPOSER = './composer.lock';

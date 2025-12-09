@@ -3,13 +3,13 @@
 if [ -f "/app/config/csfixer.php" ]; then
   PHP_CS_FIXER_CONFIG="config/csfixer.php"
 else
-  PHP_CS_FIXER_CONFIG="vendor/php-not-dead/laravel-testing-tools/src/Config/csfixer.php"
+  PHP_CS_FIXER_CONFIG="vendor/elph-studio/laravel-testing-tools/src/Config/csfixer.php"
 fi
 
 if [ -f "/app/config/phpcs.xml" ]; then
   PHP_CS_CONFIG="config/phpcs.xml"
 else
-  PHP_CS_CONFIG="vendor/php-not-dead/laravel-testing-tools/src/Config/phpcs.xml"
+  PHP_CS_CONFIG="vendor/elph-studio/laravel-testing-tools/src/Config/phpcs.xml"
 fi
 
 if [ -z "$1" ]; then
