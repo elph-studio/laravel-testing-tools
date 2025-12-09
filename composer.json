@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Laravel Testing Tools library",
     "license": "MIT",
-    "keywords": ["phpunit", "testing","phpcs", "phpcsfixer", "PHP_CodeSniffer", "sniffs", "standards", "lint", "linting", "psr"],
+    "keywords": ["phpunit", "testing", "phpcs", "phpcsfixer", "PHP_CodeSniffer", "sniffs", "standards", "lint", "linting", "psr"],
     "authors": [{
         "name": "Elephant Studio",
         "email": "developers@elph.studio",
@@ -28,12 +28,10 @@
         "bin/unit",
         "bin/lint"
     ],
+    "minimum-stability": "stable",
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true,
-            "wikimedia/composer-merge-plugin": true
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
