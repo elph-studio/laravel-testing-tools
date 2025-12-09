@@ -7,6 +7,7 @@ This package provides preconfigured `PHP Unit` and `Linting Tools` packages for 
 
 It also includes vendor testing tool that can be run during GitHub workflow to disable PR merging if some vendors do not meet production requirements.
 
+
 ### PHP Unit configuration contains
 
 1. Test Cases
@@ -25,7 +26,8 @@ It also includes vendor testing tool that can be run during GitHub workflow to d
       - `Module/*/*/Test/Feature`
       - `Module/*/Test/Unit`
       - `Module/*/*/Test/Unit`
-3. [vendor/elph-studio/laravel-testing-tools/src/Config/phpunit.xml](src/Config/phpunit.xml) will be used only if there is no local configuration file `config/phpunit.xml`
+    - Configuration file will be used only if there is no local configuration file `config/phpunit.xml`
+
 
 ### Linting tools configuration contains
 
@@ -35,23 +37,26 @@ It also includes vendor testing tool that can be run during GitHub workflow to d
     - [OPAY Coding Stardards](https://github.com/opay/lib.php-linting-tools) - included
     - [Moxio PHP CodeSniffer Standards](https://github.com/Moxio/php-codesniffer-sniffs) - removed due to low maintainability and recurring conflicts with upper mentioned libraries latest versions
 2. [PHP CS Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) [rules set](src/Config/csfixer.php)
+
 3. These rules sets will be used only if local rules set are not found in `config/phpcs_rules.xml` and `config/csfixer.php`
+
 
 ### Installation & running
 
 Install
-> $ composer require --dev elph-studio/laravel-testing-tools
+> composer require --dev elph-studio/laravel-testing-tools
 
 Run PHP Unit tests:
-> $ vendor/bin/unit
+> vendor/bin/unit
 
 Run Linting tools _(run both PHP CS and PHP CS Fixer)_:
 
-> $ vendor/bin/lint
+> vendor/bin/lint
 
 Automatic Lint fixing:
 
-> $ vendor/bin/lint fix
+> vendor/bin/lint fix
+
 
 ### Running Vendors Validator in GitHub Workflow
 

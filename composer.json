@@ -2,11 +2,12 @@
     "name": "elph-studio/laravel-testing-tools",
     "type": "library",
     "description": "Laravel Testing Tools library",
-    "keywords": ["phpunit", "phpcs", "phpcsfixer"],
+    "license": "MIT",
+    "keywords": ["phpunit", "testing","phpcs", "phpcsfixer", "PHP_CodeSniffer", "sniffs", "standards", "lint", "linting", "psr"],
     "authors": [{
-        "name": "Vitalij Vladimirov",
-        "email": "vitalij@cto4sale.com",
-        "homepage": "https://www.cto4sale.com"
+        "name": "Elephant Studio",
+        "email": "developers@elph.studio",
+        "homepage": "https://www.elph.studio"
     }],
     "require": {
         "php": "^8.5",
