@@ -1,7 +1,7 @@
 README.md export-ignore
 readme export-ignore
 tests export-ignore
-.env.example
+.env.example export-ignore
 .github export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
