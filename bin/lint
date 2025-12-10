@@ -2,14 +2,18 @@
 
 if [ -f "/app/config/csfixer.php" ]; then
   PHP_CS_FIXER_CONFIG="config/csfixer.php"
-else
+elif [ -f "vendor/elph-studio/laravel-testing-tools/src/Config/csfixer.php" ]; then
   PHP_CS_FIXER_CONFIG="vendor/elph-studio/laravel-testing-tools/src/Config/csfixer.php"
+else
+  PHP_CS_FIXER_CONFIG="src/Config/csfixer.php"
 fi
 
 if [ -f "/app/config/phpcs.xml" ]; then
   PHP_CS_CONFIG="config/phpcs.xml"
-else
+elif [ -f "vendor/elph-studio/laravel-testing-tools/src/Config/phpcs.xml" ]; then
   PHP_CS_CONFIG="vendor/elph-studio/laravel-testing-tools/src/Config/phpcs.xml"
+else
+  PHP_CS_CONFIG="tests/phpcs.xml"
 fi
 
 if [ -z "$1" ]; then

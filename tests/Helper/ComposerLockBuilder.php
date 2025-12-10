@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Helper;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 
 class ComposerLockBuilder
@@ -37,6 +38,7 @@ class ComposerLockBuilder
 
     /**
      * @param array{name: 'string', version: 'string'} $packages
+     * @param array $fixture
      * @return array
      */
     private function generatePackagesInfo(array $packages, array $fixture): array
@@ -50,8 +52,8 @@ class ComposerLockBuilder
         }
 
         $result = [];
-        foreach ($packages as $package) {
-            $packageInfo = array_key_exists($package['name'], $this->fixturePackages) === true
+        collect($packages)->each(function (array $package) use (&$result) {
+            $packageInfo = Arr::exists($this->fixturePackages, $package['name']) === true
                 ? $this->fixturePackages[$package['name']]
                 : $this->fixturePackages[array_rand($this->fixturePackages)];
 
@@ -59,32 +61,35 @@ class ComposerLockBuilder
             $packageInfo['version'] = $package['version'];
 
             $result[] = $packageInfo;
-        }
+        });
 
         return $result;
     }
 
     private function generateStabilityFlags(array $composerLock): array
     {
-        $allPackages = array_merge($composerLock['packages'], $composerLock['packages-dev']);
         $unstablePackages = [];
-        foreach ($allPackages as $package) {
-            $pass = preg_match('/^v?\d{1,2}\.\d{1,4}(?:\.\d{1,4})?$/', $package['version']) === 1;
-            if ($pass === true) {
-                continue;
-            }
 
-            $unstablePackages[$package['name']] = 20;
-        }
+        collect($composerLock['packages'])
+            ->merge($composerLock['packages-dev'])
+            ->filter(static function (array $package) use (&$unstablePackages) {
+                $pass = preg_match('/^v?\d{1,2}\.\d{1,4}(?:\.\d{1,4})?$/', $package['version']) === 1;
+                if ($pass === true) {
+                    return;
+                }
+
+                $unstablePackages[$package['name']] = 20;
+            });
 
         return $unstablePackages;
     }
 
     private function generateFixturePackages(array $fixture): void
     {
-        $allPackages = array_merge($fixture['packages'], $fixture['packages-dev']);
-        foreach ($allPackages as $package) {
-            $this->fixturePackages[$package['name']] = $package;
-        }
+        collect($fixture['packages'])
+            ->merge($fixture['packages-dev'])
+            ->each(function (array $package) {
+                $this->fixturePackages[$package['name']] = $package;
+            });
     }
 }

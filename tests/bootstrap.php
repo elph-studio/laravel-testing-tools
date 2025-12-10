@@ -7,6 +7,7 @@ use Illuminate\Foundation\Application;
 $basepath = '/tmp';
 $bootstrapCache = $basepath . '/bootstrap/cache';
 
+// phpcs:ignore Generic.PHP.ForbiddenFunctions
 if (is_dir($bootstrapCache) === false) {
     mkdir($bootstrapCache, 0755, true);
 }

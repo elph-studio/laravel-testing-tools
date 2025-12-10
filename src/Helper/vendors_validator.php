@@ -122,8 +122,8 @@ return new class () {
 
         if (array_key_exists($vendor, $skip) === true) {
             echo $this->color(
-                    sprintf('Vendor "%s:%s" is skipped by configuration.', $vendor, $version) . "\n",
-                    'warning'
+                sprintf('Vendor "%s:%s" is skipped by configuration.', $vendor, $version) . "\n",
+                'warning'
             );
 
             return true;

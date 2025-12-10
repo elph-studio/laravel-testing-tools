@@ -126,7 +126,7 @@ class VendorsValidatorTest extends FeatureTestCase
                 ['name' => 'elph-studio/laravel-testing-tools', 'version' => 'v1.0.0'],
             ],
             'skip' => [
-                'elph-studio/laravel-helpers'
+                'elph-studio/laravel-helpers',
             ],
             'expectedSuccesses' => 2,
             'expectedWarnings' => 1,
@@ -155,7 +155,7 @@ class VendorsValidatorTest extends FeatureTestCase
             ],
             'packagesDev' => [],
             'skip' => [
-                'elph-studio/laravel-database-tools'
+                'elph-studio/laravel-database-tools',
             ],
             'expectedSuccesses' => 1,
             'expectedWarnings' => 1,
@@ -168,7 +168,7 @@ class VendorsValidatorTest extends FeatureTestCase
                 ['name' => 'elph-studio/laravel-database-tools', 'version' => 'dev-master'],
             ],
             'skip' => [
-                'elph-studio/laravel-database-tools'
+                'elph-studio/laravel-database-tools',
             ],
             'expectedSuccesses' => 1,
             'expectedWarnings' => 1,
@@ -218,7 +218,7 @@ class VendorsValidatorTest extends FeatureTestCase
                 ['name' => 'elph-studio/laravel-testing-tools', 'version' => 'v1.0.0'],
             ],
             'skip' => [
-                'elph-studio/laravel-helpers'
+                'elph-studio/laravel-helpers',
             ],
             'expectedSuccesses' => 1,
             'expectedWarnings' => 1,
@@ -261,7 +261,7 @@ class VendorsValidatorTest extends FeatureTestCase
                 ['name' => 'elph-studio/laravel-database-tools', 'version' => 'dev-master'],
             ],
             'skip' => [
-                'elph-studio/laravel-database-tools'
+                'elph-studio/laravel-database-tools',
             ],
             'expectedSuccesses' => 0,
             'expectedWarnings' => 1,
