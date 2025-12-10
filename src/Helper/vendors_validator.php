@@ -75,7 +75,7 @@ return new class () {
 
         $composer ??= self::DEFAULT_COMPOSER_LOCATION;
         if (file_exists($composer) === false) {
-            echo $this->color('composer.lock file not found' . "\n",'success');
+            echo $this->color('composer.lock file not found' . "\n", 'success');
 
             return null;
         }
