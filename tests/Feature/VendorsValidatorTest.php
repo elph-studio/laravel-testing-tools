@@ -12,6 +12,7 @@ use Tests\Helper\ComposerLockBuilder;
 
 class VendorsValidatorTest extends FeatureTestCase
 {
+    private const string VENDOR_VALIDATOR = 'src/Helper/vendors_validator.php';
     private ComposerLockBuilder $builder;
 
     protected function setUp(): void
@@ -32,7 +33,7 @@ class VendorsValidatorTest extends FeatureTestCase
 
         // Execution
         exec(
-            'php src/Helper/vendors_validator.php --composer=' . $composer,
+            sprintf('php %s --composer=%s', self::VENDOR_VALIDATOR, $composer),
             $output,
             $exitCode
         );
@@ -97,11 +98,7 @@ class VendorsValidatorTest extends FeatureTestCase
 
         // Execution
         exec(
-            sprintf(
-                'php /app/src/Helper/vendors_validator.php --composer=%s --skip=%s',
-                $composer,
-                implode(',', $skip)
-            ),
+            sprintf('php %s --composer=%s --skip=%s', self::VENDOR_VALIDATOR, $composer, implode(',', $skip)),
             $output,
             $exitCode
         );
@@ -189,11 +186,7 @@ class VendorsValidatorTest extends FeatureTestCase
 
         // Execution
         exec(
-            sprintf(
-                'php /app/src/Helper/vendors_validator.php --composer=%s --skip=%s',
-                $composer,
-                implode(',', $skip)
-            ),
+            sprintf('php %s --composer=%s --skip=%s', self::VENDOR_VALIDATOR, $composer, implode(',', $skip)),
             $output,
             $exitCode
         );
@@ -273,7 +266,7 @@ class VendorsValidatorTest extends FeatureTestCase
     {
         // Execution
         exec(
-            'php /app/src/Helper/vendors_validator.php --composer=non_existing_composer.lock',
+            sprintf('php %s --composer=non_existing_composer.lock', self::VENDOR_VALIDATOR),
             $output,
             $exitCode
         );
