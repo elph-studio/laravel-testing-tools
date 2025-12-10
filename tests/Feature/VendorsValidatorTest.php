@@ -32,7 +32,7 @@ class VendorsValidatorTest extends FeatureTestCase
 
         // Execution
         exec(
-            'php /app/src/Helper/vendors_validator.php --composer=' . $composer,
+            'php src/Helper/vendors_validator.php --composer=' . $composer,
             $output,
             $exitCode
         );
