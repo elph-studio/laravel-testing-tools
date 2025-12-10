@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\File;
 class ComposerLockBuilder
 {
     private const string SOURCE_COMPOSER_LOCATION = 'tests/Fixtures/composer.lock.source';
-    private const string TEMPORARY_COMPOSER_LOCATION = '/tmp/composer.lock';
+    private const string DOCKER_COMPOSER_LOCATION = '/tmp/composer.lock';
+    private const string GITHUB_COMPOSER_LOCATION = 'tests/Fixtures/composer.lock';
 
     private array $fixturePackages;
 
@@ -31,9 +32,9 @@ class ComposerLockBuilder
 
         $json = json_encode($composerLock, JSON_THROW_ON_ERROR);
 
-        file_put_contents(self::TEMPORARY_COMPOSER_LOCATION, $json);
+        file_put_contents(self::GITHUB_COMPOSER_LOCATION, $json);
 
-        return self::TEMPORARY_COMPOSER_LOCATION;
+        return self::GITHUB_COMPOSER_LOCATION;
     }
 
     /**
@@ -91,5 +92,12 @@ class ComposerLockBuilder
             ->each(function (array $package) {
                 $this->fixturePackages[$package['name']] = $package;
             });
+    }
+
+    private function getTemporaryComposerLocation(): string
+    {
+        return env('HOME') === '/home/docker'
+            ? self::DOCKER_COMPOSER_LOCATION
+            : self::GITHUB_COMPOSER_LOCATION;
     }
 }
