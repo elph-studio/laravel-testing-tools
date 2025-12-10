@@ -1,14 +1,17 @@
 #!/bin/bash
 
 # PHP_UNIT_BIN can be set in .env to determine location of PHP Unit launch script
+# "/app/artisan test" or "vendor/bin/phpunit"
 if [ -z "$PHP_UNIT_BIN" ]; then
-  PHP_UNIT_BIN="/app/artisan test"
+  PHP_UNIT_BIN="vendor/bin/phpunit"
 fi
 
 if [ -f "/app/config/phpunit.xml" ]; then
   CONFIG="config/phpunit.xml"
-else
+elif [ -f "vendor/elph-studio/laravel-testing-tools/src/Config/phpunit.xml" ]; then
   CONFIG="vendor/elph-studio/laravel-testing-tools/src/Config/phpunit.xml"
+else
+  CONFIG="tests/phpunit.xml"
 fi
 
 PHP_UNIT_BIN=$(echo $PHP_UNIT_BIN|tr -d '\n')

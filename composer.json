@@ -24,6 +24,11 @@
             "Elph\\LaravelTestingTools\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
     "bin": [
         "bin/unit",
         "bin/lint"

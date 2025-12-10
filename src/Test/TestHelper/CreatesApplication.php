@@ -12,6 +12,7 @@ trait CreatesApplication
 {
     private array $possibleAppLocations = [
         'bootstrap/app.php',
+        'tests/bootstrap.php',
     ];
 
     public function createApplication(): Application
@@ -27,7 +28,7 @@ trait CreatesApplication
     {
         // phpcs:ignore
         foreach ($this->possibleAppLocations as $location) {
-            if (file_exists($location)) {
+            if (file_exists($location) === true) {
                 return require $location;
             }
         }
