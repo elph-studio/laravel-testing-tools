@@ -8,6 +8,7 @@ use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;
 use RuntimeException;
 
+// phpcs:disable
 trait CreatesApplication
 {
     private array $possibleAppLocations = [
@@ -27,7 +28,6 @@ trait CreatesApplication
 
     private function getAppLocation(): Application
     {
-        // phpcs:ignore
         foreach ($this->possibleAppLocations as $location) {
             if (file_exists($location) === true) {
                 return require $location;
