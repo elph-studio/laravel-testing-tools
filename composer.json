@@ -1,7 +1,7 @@
 {
     "name": "elph-studio/laravel-testing-tools",
     "type": "library",
-    "description": "Laravel Testing Tools library",
+    "description": "Laravel Testing Tools",
     "license": "MIT",
     "keywords": ["phpunit", "testing", "phpcs", "phpcsfixer", "PHP_CodeSniffer", "sniffs", "standards", "lint", "linting", "psr"],
     "authors": [{
