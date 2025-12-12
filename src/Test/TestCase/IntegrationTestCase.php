@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Elph\LaravelTestingTools\Test\TestCase;
+namespace Elph\LaravelTesting\Test\TestCase;
 
-use Elph\LaravelTestingTools\Test\TestHelper\CreatesApplication;
+use Elph\LaravelTesting\Test\TestHelper\CreatesApplication;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase;
 

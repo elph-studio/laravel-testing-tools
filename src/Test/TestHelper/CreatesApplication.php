@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Elph\LaravelTestingTools\Test\TestHelper;
+namespace Elph\LaravelTesting\Test\TestHelper;
 
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;

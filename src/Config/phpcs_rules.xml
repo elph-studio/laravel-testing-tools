@@ -24,13 +24,11 @@
     <rule ref="OpaySniffs.Classes.ForbiddenClasses">
         <properties>
             <property name="forbiddenExtends" type="array">
-                <element key="Illuminate\Foundation\Http\FormRequest" value="Elph\LaravelTestingTools\DataTransferObject\Request"/>
-                <element key="Symfony\Component\HttpFoundation\Exception\BadRequestException" value="Elph\LaravelTestingTools\Exception\HttpException\BadRequestException"/>
-                <element key="Illuminate\Database\Eloquent\Model" value="Elph\LaravelTestingTools\Model\Model"/>
-                <element key="Illuminate\Database\Eloquent\Factories\Factory" value="Elph\LaravelTestingTools\Database\Faker"/>
-                <element key="Illuminate\Database\Migrations\Migration" value="Elph\LaravelTestingTools\Database\Migration"/>
-                <element key="Illuminate\Cache\CacheManager" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
-                <element key="Illuminate\Routing\ViewController" value="Elph\LaravelTestingTools\Http\Controller\ViewController"/>
+                <element key="Illuminate\Database\Eloquent\Model" value="Elph\LaravelDatabase\Model\Model"/>
+                <element key="Illuminate\Database\Eloquent\Factories\Factory" value="Elph\LaravelDatabase\Database\Faker"/>
+                <element key="Illuminate\Database\Seeder" value="Elph\LaravelDatabase\Database\Seeder"/>
+                <element key="Illuminate\Database\Migrations\Migration" value="Elph\LaravelDatabase\Migration\Migration"/>
+                <element key="Illuminate\Database\Schema\Blueprint" value="Elph\LaravelDatabase\Migration\Blueprint"/>
                 <!-- Collections usage by mistake -->
                 <element key="Nwidart\Modules\Collection" value="Illuminate\Support\Collection"/>
                 <element key="Ramsey\Collection\Collection" value="Illuminate\Support\Collection"/>
@@ -40,51 +38,21 @@
                 <element key="mysql_xdevapi\Collection" value="Illuminate\Support\Collection"/>
                 <element key="Cassandra\Type\Collection" value="Illuminate\Support\Collection"/>
                 <!-- One of -->
-                <element key="Illuminate\Http\Resources\Json\JsonResource" value="Elph\LaravelTestingTools\DataTransferObject\Response,
-                    Elph\LaravelTestingTools\DataTransferObject\ClientResponse
+                <element key="Illuminate\Foundation\Testing\TestCase" value="Elph\LaravelTesting\Test\TestCase\UnitTestCase,
+                    Elph\LaravelTesting\Test\TestCase\IntegrationTestCase,
+                    Elph\LaravelTesting\Test\TestCase\FeatureTestCase
                 "/>
-                <element key="Illuminate\Routing\Controller" value="Elph\LaravelTestingTools\Http\Controller\PrivateController,
-                    Elph\LaravelTestingTools\Http\Controller\ApiController,
-                    Elph\LaravelTestingTools\Http\Controller\ViewController,
-                "/>
-                <element key="Elph\LaravelTestingTools\Http\Controller\Controller" value="Elph\LaravelTestingTools\Http\Controller\PrivateController,
-                    Elph\LaravelTestingTools\Http\Controller\ApiController,
-                    Elph\LaravelTestingTools\Http\Controller\ViewController
-                "/>
-                <element key="Illuminate\Foundation\Testing\TestCase" value="Elph\LaravelTestingTools\FeatureTestCase,
-                    Elph\LaravelTestingTools\ControllerTestCase,
-                    Elph\LaravelTestingTools\UnitTestCase
-                "/>
-                <element key="Test\TestCase" value="Elph\LaravelTestingTools\FeatureTestCase,
-                    Elph\LaravelTestingTools\ControllerTestCase,
-                    Elph\LaravelTestingTools\UnitTestCase
+                <element key="Test\TestCase" value="Elph\LaravelTesting\Test\TestCase\UnitTestCase,
+                    Elph\LaravelTesting\Test\TestCase\IntegrationTestCase,
+                    Elph\LaravelTesting\Test\TestCase\FeatureTestCase
                 "/>
             </property>
         </properties>
-        <exclude-pattern>src/DataTransferObject/*</exclude-pattern>
         <exclude-pattern>src/Model/Model.php</exclude-pattern>
-        <exclude-pattern>src/Database/Faker.php</exclude-pattern>
-        <exclude-pattern>src/Http/Controller/Controller.php</exclude-pattern>
-        <exclude-pattern>app/Http/Controllers/Controller.php</exclude-pattern>
-        <exclude-pattern>src/Http/Controller/ApiController.php</exclude-pattern>
-        <exclude-pattern>src/Http/Controller/ViewController.php</exclude-pattern>
-        <exclude-pattern>src/Database/Migration.php</exclude-pattern>
+        <exclude-pattern>src/Faker/Faker.php</exclude-pattern>
+        <exclude-pattern>src/Seeder/Seeder.php</exclude-pattern>
+        <exclude-pattern>src/Migration/Migration.php</exclude-pattern>
         <exclude-pattern>*TestCase.php</exclude-pattern>
-    </rule>
-
-    <rule ref="OpaySniffs.Files.ForbiddenCode">
-        <properties>
-            <property name="forbiddenCode" type="array">
-                <element key="Illuminate\Support\Facades\Cache" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
-                <element key="Illuminate\Contracts\Cache\Store\TaggedCache" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
-                <element key="cache()" value="Elph\LaravelTestingTools\Cache\CacheManager"/>
-            </property>
-        </properties>
-        <exclude-pattern>src/Cache/CacheManager.php$</exclude-pattern>
-        <exclude-pattern>src/Console/CacheForgetByPatternCommand.php$</exclude-pattern>
-        <exclude-pattern>src/Console/CacheKeysViewCommand.php$</exclude-pattern>
-        <exclude-pattern>src/Test/Helper/MocksCache.php$</exclude-pattern>
-        <exclude-pattern>test/Unit/Cache/CacheManagerTest.php$</exclude-pattern>
     </rule>
 
     <rule ref="Generic.PHP.ForbiddenFunctions">
@@ -94,18 +62,18 @@
                 <element key="print" value="echo"/>
                 <!-- Replace plain PHP with Laravel functions-->
                 <element key="is_dir" value="File::isDirectory"/>
-                <element key="exists" value="File::exists"/>
+                <element key="file_exists" value="File::exists"/>
                 <element key="foreach" value="collect()->each(), collect()->map(), collect()->filter() and other collect()->..."/>
                 <element key="array_filter" value="collect()->filter"/>
                 <element key="array_merge" value="collect()->merge"/>
                 <element key="array_keys" value="collect()->keys"/>
-                <element key="array_key_exists" value="collect()->has"/>
+                <element key="array_key_exists" value="Arr::has"/>
                 <element key="array_search" value="collect()->search"/>
                 <element key="in_array" value="collect()->contains"/>
                 <element key="explode" value="Str::of(...)->explode"/>
                 <!-- Disallow some Laravel functions-->
-                <element key="throw_if" value="if(...) -> throw new"/>
-                <element key="throw_unless" value="if(...) -> throw new"/>
+                <element key="throw_if" value="if (...) { throw new ...Exception(...); }"/>
+                <element key="throw_unless" value="if (...) { throw new ...Exception(...); }"/>
             </property>
         </properties>
         <exclude-pattern>*Test.php</exclude-pattern>

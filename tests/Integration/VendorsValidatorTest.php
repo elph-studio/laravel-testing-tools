@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Test\Integration;
 
-use Elph\LaravelTestingTools\Test\TestCase\IntegrationTestCase;
+use Elph\LaravelTesting\Test\TestCase\IntegrationTestCase;
 use Generator;
 use JetBrains\PhpStorm\ArrayShape;
 use PHPUnit\Framework\Attributes\DataProvider;
