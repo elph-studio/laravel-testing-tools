@@ -13,10 +13,10 @@
         "php": "^8.5",
         "opay-dev/php-linting-tools": "^1.6",
         "phpunit/phpunit": "12.*",
-        "mockery/mockery": "1.*"
+        "mockery/mockery": "1.*",
+        "roave/security-advisories": "dev-latest"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "laravel/framework": "12.*"
     },
     "autoload": {
