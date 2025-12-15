@@ -10,7 +10,7 @@ class $CLASS$ extends TestCase
 {
     public function testWillCallExampleEndpointAndSucceed(): void
     {
-        // Executios
+        // Execution
         $response = $this->get('/');
 
         // Asserts
