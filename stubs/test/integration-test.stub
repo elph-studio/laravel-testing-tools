@@ -1,0 +1,39 @@
+<?php
+
+declare(strict_types=1);
+
+namespace $NAMESPACE$;
+
+use Elph\LaravelTesting\Test\TestCase\IntegrationTestCase;
+use Generator;
+use PHPUnit\Framework\Attributes\DataProvider;
+
+class $CLASS$ extends IntegrationTestCase
+{
+    private TestService $service;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->service = resolve(TestService::class);
+    }
+
+    #[DataProvider('generateTestDataForService')]
+    public function testWillCallExampleServiceFunctionAndSucceed(array $request, array $expected): void
+    {
+        // Execution
+        $result = $this->service->doSomething($request);
+
+        // Asserts
+        $this->assertEquals($expected, $result->toArray());
+    }
+
+    public static function generateTestDataForService(): Generator
+    {
+        yield 'Test data' => [
+            'request' => ['foo' => 'bar'],
+            'expected' => ['foo' => 'bar'],
+        ];
+    }
+}

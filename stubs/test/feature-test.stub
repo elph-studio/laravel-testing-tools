@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace $NAMESPACE$;
+
+use Elph\LaravelTesting\Test\TestCase\FeatureTestCase;
+
+class $CLASS$ extends TestCase
+{
+    public function testWillCallExampleEndpointAndSucceed(): void
+    {
+        // Executios
+        $response = $this->get('/');
+
+        // Asserts
+        $response->assertStatus(200);
+        $response->assertContent('ok');
+    }
+}
