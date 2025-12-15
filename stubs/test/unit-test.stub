@@ -1,0 +1,55 @@
+<?php
+
+declare(strict_types=1);
+
+namespace $NAMESPACE$;
+
+use Elph\LaravelTesting\Test\TestCase\UnitTestCase;
+use Generator;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+
+class $CLASS$ extends UnitTestCase
+{
+    private TestRepository|MockObject $repository;
+
+    private TestService $service;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->repository = $this->createMock(TestRepository::class);
+        $this->app->instance(TestRepository::class, $this->repository);
+
+        $this->service = resolve(TestService::class);
+    }
+
+    #[DataProvider('generateTestDataForServiceSuccessResponse')]
+    public function testWillValidateDataAndGetSuccess(array $request, array $expected): void
+    {
+        // Mocks
+        $this->repository
+            ->method('save')
+            ->willReturn(new Test());
+
+        // Asserts
+        $this->repository
+            ->expects($this->once())
+            ->method('save');
+
+        // Execution
+        $result = $this->service->doSomething($request);
+
+        // Asserts
+        $this->assertEquals($expected, $result->toArray());
+    }
+
+    public static function generateTestDataForServiceSuccessResponse(): Generator
+    {
+        yield 'Test data' => [
+            'request' => ['foo' => 'bar'],
+            'expected' => ['foo' => 'bar'],
+        ];
+    }
+}
